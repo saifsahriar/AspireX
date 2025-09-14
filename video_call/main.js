@@ -1,5 +1,7 @@
-const APP_ID = "19f8af53175a4f91bbd343b2356cd62b "
-const TOKEN = "007eJxTYBB/MyXv4/ljOl6lXw9lz6jRPTJh6geJUw1KP7MY57rMvs6rwGBomWaRmGZqbGhummiSZmmYlJRibGKcZGRsapacYmaUlDbjZVpDICMDR2I6AyMUgvgsDLmJmXkMDADEZCBn"
+require('dotenv').config();
+
+const APP_ID = process.env.APP_ID
+const TOKEN = process.env.TOKEN
 const CHANNEL = "main"
 
 const client = AgoraRTC.createClient({mode:'rtc', codec:'vp8'})
@@ -100,4 +102,5 @@ let toggleCamera = async (e) => {
 document.getElementById('join-btn').addEventListener('click', joinStream)
 document.getElementById('leave-btn').addEventListener('click', leaveAndRemoveLocalStream)
 document.getElementById('mic-btn').addEventListener('click', toggleMic)
+
 document.getElementById('camera-btn').addEventListener('click', toggleCamera)
